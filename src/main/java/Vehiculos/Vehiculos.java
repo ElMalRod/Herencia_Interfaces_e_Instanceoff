@@ -20,6 +20,11 @@ public abstract class Vehiculos{
     private double AceleracionBase;
      /**
      *Constructor de Vehiculos
+     * @param Combustible
+     * @param CantidadCombustible
+     * @param Pasajeros
+     * @param VelocidadMax
+     * @param AceleracionBase
      */
    
     public Vehiculos(String Combustible, int CantidadCombustible, int Pasajeros, int VelocidadMax, double AceleracionBase) {
@@ -29,8 +34,17 @@ public abstract class Vehiculos{
         this.VelocidadMax = VelocidadMax;
         this.AceleracionBase = AceleracionBase;
     }
+
+    public Vehiculos() {
+        this.Combustible = Combustible;
+        this.CantidadCombustible = CantidadCombustible;
+        this.Pasajeros = Pasajeros;
+        this.VelocidadMax = VelocidadMax;
+        this.AceleracionBase = AceleracionBase;
+    }
      /**
-     * Gettersy Setters Metodos para obtener y Settear los parametros
+     * Getters y Setters Metodos para obtener y Settear los parametros
+     * @return 
      */
     
     public String getCombustible() {
@@ -72,5 +86,9 @@ public abstract class Vehiculos{
     public void setAceleracionBase(double AceleracionBase) {
         this.AceleracionBase = AceleracionBase;
     }
+    /**
+     * Metodo para presentar vehiculo
+     */
+    public abstract void presentarVehiculo();
      
 }

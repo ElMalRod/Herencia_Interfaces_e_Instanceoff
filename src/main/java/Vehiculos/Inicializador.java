@@ -5,26 +5,33 @@
  */
 package Vehiculos;
 
+import TiposDeVehiculos.VehiculodeCarrera;
+import TiposDeVehiculos.VehiculoCarga;
+import TiposDeVehiculos.Camioneta;
+
 /**
  *
  * @author emili
  */
 public class Inicializador {
 
+
     /**
      * Vector de vehiculos
      */
-    private Vehiculos[] vehiculos;
+    private final Vehiculos[] vehiculos;
 
     /**
      * Constructor de vehiculos
      */
     public Inicializador() {
-        vehiculos = new Vehiculos[20];
+        vehiculos = new Vehiculos[9];
     }
 
     /**
-     * Metodo para obtener el vector de vehiculos
+     * Metodo que obtiene el vector
+     *
+     * @return
      */
     public Vehiculos[] getVehiculos() {
         return vehiculos;
@@ -34,6 +41,33 @@ public class Inicializador {
      * Metodo para inicializar vehiculos
      */
     public void IncicializarVehiculos() {
+        for (int i = 0; i < vehiculos.length; i++) {
+            if (i >= 0 && i < 3) {
+                vehiculos[i] = new Camioneta("Diesel", 100, 25, 85, 10.5);
+            } else if (i >= 3 && i <= 6) {
+                vehiculos[i] = new VehiculodeCarrera("Gasolina", 100, 2, 435, 21.7);
+            } else if (i > 6 && i <= 9) {
+                vehiculos[i] = new VehiculoCarga("Diesel", 75, 3, 65, 3.5);
+            }
+        }
 
     }
+
+    public void MostrarVehiculos() {
+        for (int i = 0; i < vehiculos.length; i++) {
+            if (vehiculos[i] instanceof Camioneta) {
+                System.out.println("------ Camioneta " + (i + 1) + " ------");
+                vehiculos[i].presentarVehiculo();
+            } else if (vehiculos[i] instanceof VehiculoCarga) {
+                System.out.println("------ Vehiculo de Carga " + (i + 1) + " ------");
+                vehiculos[i].presentarVehiculo();
+            } else if (vehiculos[i] instanceof VehiculodeCarrera) {
+                System.out.println("------ Vehiculo de Carrera " + (i + 1) + " ------");
+                vehiculos[i].presentarVehiculo();
+
+            }
+
+        }
+    }
+
 }
