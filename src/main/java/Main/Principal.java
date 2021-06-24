@@ -5,6 +5,10 @@
  */
 package Main;
 
+
+import Vehiculos.Inicializador;
+
+
 /**
  *
  * @author emili
@@ -15,7 +19,16 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        /**
+         * Objeto vehiculos que contiene un arreglo de vehiculos
+         */
+        Inicializador vehiculos = new Inicializador();
+
+        /**
+         * Inicializamos vehiculos
+         */
+        vehiculos.IncicializarVehiculos();
+        vehiculos.MostrarVehiculos();
     }
-    
+
 }
