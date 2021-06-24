@@ -25,7 +25,7 @@ public class Inicializador {
      * Constructor de vehiculos
      */
     public Inicializador() {
-        vehiculos = new Vehiculos[9];
+        vehiculos = new Vehiculos[20];
     }
 
     /**
@@ -42,11 +42,11 @@ public class Inicializador {
      */
     public void IncicializarVehiculos() {
         for (int i = 0; i < vehiculos.length; i++) {
-            if (i >= 0 && i < 3) {
+            if (i >= 0 && i < 6) {
                 vehiculos[i] = new Camioneta("Diesel", 100, 25, 85, 10.5);
-            } else if (i >= 3 && i <= 6) {
+            } else if (i >= 6 && i <= 12) {
                 vehiculos[i] = new VehiculodeCarrera("Gasolina", 100, 2, 435, 21.7);
-            } else if (i > 6 && i <= 9) {
+            } else if (i > 12 && i <= 20) {
                 vehiculos[i] = new VehiculoCarga("Diesel", 75, 3, 65, 3.5);
             }
         }
